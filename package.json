@@ -34,7 +34,7 @@
         "vite": "^7.1.11"
     },
     "engines": {
-        "node": "18.x"
+        "node": "22.x"
     },
     "optionalDependencies": {
         "@rollup/rollup-linux-x64-gnu": "4.6.1"
