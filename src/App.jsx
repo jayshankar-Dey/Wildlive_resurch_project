@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,lazy, Suspense} from 'react'
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Hero from './pages/Hero';
+const Hero = lazy(()=>import('./pages/Hero'))
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Loading from './components/Loading';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,9 +32,11 @@ const App = () => {
 
   return (
    <BrowserRouter>
-    <Routes>
+    <Suspense fallback={<Loading/>}>
+      <Routes>
        <Route path='/' element={<Hero/>}/>
     </Routes>
+    </Suspense>
    </BrowserRouter>
   )
 }

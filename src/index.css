@@ -14,3 +14,7 @@
     font-family: bold1;
     src: url('./fonts/JosefinSans-Medium.ttf');
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
